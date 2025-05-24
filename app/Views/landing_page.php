@@ -900,6 +900,43 @@
             color: white;
             border-color: var(--primary-color);
         }
+        
+        /* Pagination styling */
+        .pagination {
+            margin-top: 2rem;
+        }
+        
+        .pagination .page-item .page-link {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            background-color: white;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination .page-item.active .page-link {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .pagination .page-item .page-link:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        
+        .pagination .page-item .page-link:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.25);
+        }
+        
+        /* Add responsive adjustments */
+        @media (max-width: 576px) {
+            .pagination .page-item .page-link {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1041,6 +1078,11 @@
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
+            </div>
+            
+            <!-- Pagination Controls -->
+            <div class="pagination-container mt-5">
+                <?= $pager->links('projects', 'project_pager') ?>
             </div>
         </div>
     </section>

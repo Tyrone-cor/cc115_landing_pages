@@ -9,18 +9,30 @@ class Home extends BaseController
     public function index()
     {
         $projectModel = new ProjectModel();
-        $projects = $projectModel->findAll();
+        
+        // Set up pagination - 6 projects per page
+        $projects = $projectModel->paginate(6, 'projects');
+        $pager = $projectModel->pager;
         
         // Change from 'students' to 'landing_page'
-        return view('landing_page', ['projects' => $projects]);
+        return view('landing_page', [
+            'projects' => $projects,
+            'pager' => $pager
+        ]);
     }
     
     public function landing()
     {
         $projectModel = new ProjectModel();
-        $projects = $projectModel->findAll();
         
-        return view('landing_page', ['projects' => $projects]);
+        // Set up pagination - 6 projects per page
+        $projects = $projectModel->paginate(6, 'projects');
+        $pager = $projectModel->pager;
+        
+        return view('landing_page', [
+            'projects' => $projects,
+            'pager' => $pager
+        ]);
     }
 }
 
