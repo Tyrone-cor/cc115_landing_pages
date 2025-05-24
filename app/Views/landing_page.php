@@ -24,7 +24,7 @@
         
         body {
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--secondary-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
@@ -34,17 +34,18 @@
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             transition: all var(--transition-speed);
-            padding: 1rem 0;
+            padding: 0.5rem 0; /* Reduced from 1rem to 0.5rem */
         }
         
         .navbar.scrolled {
-            padding: 0.5rem 0;
+            padding: 0.3rem 0; /* Reduced from 0.5rem to 0.3rem */
         }
         
         .navbar-brand {
             font-weight: 700;
             color: var(--primary-color);
             transition: transform var(--transition-speed);
+            font-size: 1.1rem; /* Slightly smaller font size */
         }
         
         .navbar-brand:hover {
@@ -54,9 +55,10 @@
         .nav-link {
             font-weight: 500;
             position: relative;
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.8rem; /* Reduced from 0.5rem 1rem */
             margin: 0 0.25rem;
             transition: color var(--transition-speed);
+            font-size: 0.95rem; /* Slightly smaller font size */
         }
         
         .nav-link::after {
@@ -77,14 +79,17 @@
         }
         
         .hero-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #3a0ca3 100%);
-            color: white;
-            padding: 8rem 0 6rem;
-            margin-bottom: 5rem;
             position: relative;
+            padding: 8rem 0 5rem;
+            background: var(--primary-color);
+            color: white;
             overflow: hidden;
+            background-image: url('<?= base_url('/public/assets/images/hero-bg.png') ?>');
+            background-size: cover;
+            background-position: center;
         }
-        
+
+        /* Keep the overlay for better text readability */
         .hero-section::before {
             content: '';
             position: absolute;
@@ -92,25 +97,54 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3QgaWQ9InBhdHRlcm4tYmFja2dyb3VuZCIgd2lkdGg9IjQwMCUiIGhlaWdodD0iNDAwJSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAzKSI+PC9yZWN0PjxjaXJjbGUgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA1KSIgY3g9IjIwIiBjeT0iMjAiIHI9IjEiPjwvY2lyY2xlPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgaGVpZ2h0PSIxMDAlIiB3aWR0aD0iMTAwJSI+PC9yZWN0Pjwvc3ZnPg==');
-            opacity: 0.5;
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(100px); /* Add blur effect */
+            -webkit-backdrop-filter: blur(100px); /* For Safari support */
+            opacity: 0.7;
         }
         
+        .hero-title, .hero-subtitle, .university-badge, .hero-logos {
+            position: relative;
+            z-index: 5; /* Ensures these elements appear above the blurred overlay */
+        }
+
         .hero-title {
             font-weight: 800;
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            position: relative;
             animation: fadeInUp 1s ease-out;
         }
-        
+
         .hero-subtitle {
             font-size: 1.25rem;
             opacity: 0.9;
             max-width: 700px;
             margin: 0 auto;
-            position: relative;
             animation: fadeInUp 1s ease-out 0.2s;
+            animation-fill-mode: both;
+        }
+
+        .university-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(143, 193, 248, 0.2);
+            color: yellow;
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            animation: fadeInUp 1s ease-out 0.3s;
+            animation-fill-mode: both;
+        }
+
+        .hero-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 2rem;
+            animation: fadeInUp 1s ease-out 0.4s;
             animation-fill-mode: both;
         }
         
@@ -522,6 +556,37 @@
                 font-size: 1.75rem;
             }
         }
+
+        /* Add this new media query for extra small devices */
+        @media (max-width: 376px) {
+            .hero-title {
+                font-size: 1.80rem; /* Even smaller font size for very small screens */
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-section {
+                padding: 4.5rem 0 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.0rem; /* Smaller brand text */
+            }
+            
+            .navbar-logo {
+                height: 30px; /* Smaller logo */
+            }
+            
+            .hero-logo {
+                height: 60px; /* Smaller hero logos */
+            }
+        }
         
         /* Scroll reveal animations */
         .reveal {
@@ -657,8 +722,8 @@
         .university-badge {
             display: inline-flex;
             align-items: center;
-            background-color: rgba(0, 86, 179, 0.1);
-            color: var(--primary-color);
+            background-color: rgba(143, 193, 248, 0.1);
+            color: yellow;
             border-radius: 50px;
             padding: 0.5rem 1rem;
             margin: 0.5rem 0;
@@ -696,7 +761,7 @@
         }
         
         .navbar-logo {
-            height: 40px;
+            height: 35px; /* Reduced from 40px */
             width: auto;
             transition: transform var(--transition-speed);
         }
@@ -775,6 +840,66 @@
         .class-section-badge i {
             margin-right: 0.3rem;
         }
+        
+        #search {
+            margin-top: 2rem; /* Increased top padding to move search bar down */
+            padding-bottom: 1.5rem;
+        }
+
+        .search-container {
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-container .input-group {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .search-container .input-group-text {
+            background-color: white;
+            border-right: none;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+
+        .search-container .form-control {
+            border-left: none;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            padding-left: 0;
+        }
+
+        .search-container .form-control:focus {
+            box-shadow: none;
+            border-color: #ced4da;
+        }
+
+        .filter-buttons {
+            margin-bottom: 1rem;
+        }
+
+        .btn-filter {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            padding: 0.4rem 1.2rem;
+        }
+
+        .btn-filter:hover {
+            background-color: #e9ecef;
+        }
+
+        .btn-filter.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
     </style>
 </head>
 <body>
@@ -832,6 +957,26 @@
                 
                 <!-- College of Computer Studies Logo - Replace with actual logo path -->
                 <img src="<?= base_url('/public/assets/images/ccs-logo.png') ?>" alt="College of Computer Studies Logo" class="hero-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Add search bar and filter buttons above projects section -->
+    <section id="search" class="py-3">
+        <div class="container">
+            <div class="search-container">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input type="text" id="projectSearch" class="form-control" placeholder="Search projects by title, team members, or class section...">
+                </div>
+            </div>
+            
+            <div class="filter-buttons text-center mt-3">
+                <div class="btn-group" role="group" aria-label="Filter by class section">
+                    <button type="button" class="btn btn-filter active" data-filter="all">All</button>
+                    <button type="button" class="btn btn-filter" data-filter="BSIS 2A">BSIS 2A</button>
+                    <button type="button" class="btn btn-filter" data-filter="BSIS 2B">BSIS 2B</button>
+                </div>
             </div>
         </div>
     </section>
@@ -1557,15 +1702,146 @@
             });
         }
         
+        function initFilterButtons() {
+            const filterButtons = document.querySelectorAll('.btn-filter');
+            if (!filterButtons.length) return;
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    const projectCards = document.querySelectorAll('.project-card');
+                    let resultsFound = false;
+                    
+                    projectCards.forEach(card => {
+                        const projectContainer = card.closest('.col-md-6');
+                        const classSection = card.querySelector('.class-section-badge') 
+                            ? card.querySelector('.class-section-badge').textContent.trim() 
+                            : '';
+                        
+                        // Apply filter
+                        if (filterValue === 'all' || classSection.includes(filterValue)) {
+                            projectContainer.style.display = '';
+                            resultsFound = true;
+                        } else {
+                            projectContainer.style.display = 'none';
+                        }
+                    });
+                    
+                    // Show "no results" message if needed
+                    const noResultsMessage = document.getElementById('noFilterResults');
+                    if (!resultsFound) {
+                        if (!noResultsMessage) {
+                            const message = document.createElement('div');
+                            message.id = 'noFilterResults';
+                            message.className = 'col-12 text-center py-4';
+                            message.innerHTML = `<p>No projects found for ${filterValue} class section.</p>`;
+                            document.getElementById('projectsContainer').appendChild(message);
+                        }
+                    } else if (noResultsMessage) {
+                        noResultsMessage.remove();
+                    }
+                    
+                    // Also apply the current search term if there is one
+                    const searchInput = document.getElementById('projectSearch');
+                    if (searchInput && searchInput.value.trim() !== '') {
+                        // Trigger the search event to filter with both criteria
+                        searchInput.dispatchEvent(new Event('input'));
+                    }
+                });
+            });
+        }
+
+        function initSearchFeature() {
+            const searchInput = document.getElementById('projectSearch');
+            if (!searchInput) return;
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                const projectCards = document.querySelectorAll('.project-card');
+                let resultsFound = false;
+                
+                // Get current active filter
+                const activeFilter = document.querySelector('.btn-filter.active');
+                const filterValue = activeFilter ? activeFilter.getAttribute('data-filter') : 'all';
+                
+                projectCards.forEach(card => {
+                    const projectContainer = card.closest('.col-md-6');
+                    const title = card.querySelector('.card-title').textContent.toLowerCase();
+                    const description = card.querySelector('.description-full') 
+                        ? card.querySelector('.description-full').textContent.toLowerCase() 
+                        : card.querySelector('.description-short').textContent.toLowerCase();
+                    const classSection = card.querySelector('.class-section-badge') 
+                        ? card.querySelector('.class-section-badge').textContent.toLowerCase() 
+                        : '';
+                    
+                    // Get all team members
+                    const teamMembers = Array.from(card.querySelectorAll('.team-badge'))
+                        .map(badge => badge.textContent.toLowerCase())
+                        .join(' ');
+                    
+                    // Check if matches search term
+                    const matchesSearch = searchTerm === '' || 
+                                        title.includes(searchTerm) || 
+                                        description.includes(searchTerm) || 
+                                        classSection.includes(searchTerm) || 
+                                        teamMembers.includes(searchTerm);
+                    
+                    // Check if matches filter
+                    const matchesFilter = filterValue === 'all' || classSection.includes(filterValue.toLowerCase());
+                    
+                    // Show or hide based on both conditions
+                    if (matchesSearch && matchesFilter) {
+                        projectContainer.style.display = '';
+                        resultsFound = true;
+                    } else {
+                        projectContainer.style.display = 'none';
+                    }
+                });
+                
+                // Show "no results" message if needed
+                const noResultsMessage = document.getElementById('noSearchResults');
+                if (!resultsFound && (searchTerm !== '' || filterValue !== 'all')) {
+                    if (!noResultsMessage) {
+                        const message = document.createElement('div');
+                        message.id = 'noSearchResults';
+                        message.className = 'col-12 text-center py-4';
+                        message.innerHTML = '<p>No projects match your search criteria.</p>';
+                        document.getElementById('projectsContainer').appendChild(message);
+                    }
+                } else if (noResultsMessage) {
+                    noResultsMessage.remove();
+                }
+            });
+        }
+        
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize Read More functionality
             initReadMore();
+            
+            // Initialize filter buttons
+            initFilterButtons();
+            
+            // Initialize search feature
+            initSearchFeature();
             
             // Add all your existing JavaScript functions here
         });
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 
