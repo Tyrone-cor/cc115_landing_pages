@@ -10,7 +10,7 @@ class Admin extends BaseController
     use ResponseTrait;
     
     protected $projectModel;
-    protected $adminCode = 'admin@cc1115'; 
+    protected $adminCode = 'admin@cc115'; // This should ideally be in an environment variable
     
     public function __construct()
     {
@@ -21,7 +21,21 @@ class Admin extends BaseController
     {
         $code = $this->request->getPost('code');
         
+        // Add rate limiting to prevent brute force attacks
+        $throttler = service('throttler');
+        $allowed = $throttler->check(md5('adminVerify' . $this->request->getIPAddress()), 5, MINUTE);
+        
+        if (!$allowed) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Too many attempts. Please try again later.'
+            ])->setStatusCode(429);
+        }
+        
         if ($code === $this->adminCode) {
+            // Set a session variable to maintain admin status
+            session()->set('is_admin', true);
+            
             return $this->response->setJSON([
                 'success' => true
             ]);
@@ -313,6 +327,7 @@ class Admin extends BaseController
         ]);
     }
 }
+
 
 
 

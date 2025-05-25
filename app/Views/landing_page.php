@@ -1385,27 +1385,42 @@
         function verifyAdmin() {
             const adminCode = document.getElementById('adminCode').value;
             
-            // This is just a simple example. In a real application, you would verify this on the server.
-            if (adminCode === 'admin123') {
-                // Show admin controls
-                document.getElementById('adminControls').classList.remove('d-none');
-                
-                // Show edit/delete buttons
-                const adminButtons = document.querySelectorAll('.admin-buttons');
-                adminButtons.forEach(button => {
-                    button.classList.remove('d-none');
-                });
-                
-                // Close modal
-                const adminModal = bootstrap.Modal.getInstance(document.getElementById('adminModal'));
-                adminModal.hide();
-                
-                // Show success toast
-                showToast('Success', 'Admin access granted', 'success');
-            } else {
-                // Show error toast
-                showToast('Error', 'Invalid admin code', 'error');
-            }
+            // Send the code to the server for verification
+            fetch('<?= base_url('admin/verify') ?>', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: 'code=' + encodeURIComponent(adminCode)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show admin controls
+                    document.getElementById('adminControls').classList.remove('d-none');
+                    
+                    // Show edit/delete buttons
+                    const adminButtons = document.querySelectorAll('.admin-buttons');
+                    adminButtons.forEach(button => {
+                        button.classList.remove('d-none');
+                    });
+                    
+                    // Close modal
+                    const adminModal = bootstrap.Modal.getInstance(document.getElementById('adminModal'));
+                    adminModal.hide();
+                    
+                    // Show success toast
+                    showToast('Success', 'Admin access granted', 'success');
+                } else {
+                    // Show error toast
+                    showToast('Error', 'Invalid admin code', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Admin verification error:', error);
+                showToast('Error', 'An error occurred during verification', 'error');
+            });
         }
         
         // Project CRUD operations
@@ -1936,9 +1951,6 @@
     </script>
 </body>
 </html>
-
-
-
 
 
 
