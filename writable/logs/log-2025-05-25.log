@@ -1,0 +1,210 @@
+CRITICAL - 2025-05-25 08:29:30 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(67): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:29:31 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(67): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:29:33 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(67): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:29:36 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(67): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:29:36 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(67): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:29:39 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(67): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:29:52 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(67): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:29:53 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(67): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:29:54 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(67): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:30:06 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(67): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:30:08 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(67): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:30:09 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(67): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:30:19 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(67): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:30:26 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(67): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:31:30 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(68): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:31:33 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(68): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:31:34 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(68): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:31:47 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(68): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:32:06 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(68): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:32:10 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(68): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 08:32:14 --> TypeError: CodeIgniter\Pager\Pager::getTotal(): Return value must be of type int, null returned
+[Method: GET, Route: home/search]
+in SYSTEMPATH\Pager\Pager.php on line 199.
+ 1 APPPATH\Controllers\Home.php(68): CodeIgniter\Pager\Pager->getTotal()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->search()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

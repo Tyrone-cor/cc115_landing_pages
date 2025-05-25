@@ -1799,64 +1799,125 @@
 
         function initSearchFeature() {
             const searchInput = document.getElementById('projectSearch');
+            const filterButtons = document.querySelectorAll('.btn-filter');
             if (!searchInput) return;
             
-            searchInput.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase().trim();
-                const projectCards = document.querySelectorAll('.project-card');
-                let resultsFound = false;
+            // Debounce function to prevent too many requests
+            let searchTimeout;
+            
+            // Function to perform the search
+            function performSearch() {
+                // Show loading spinner
+                document.getElementById('loadingSpinner').classList.add('show');
                 
-                // Get current active filter
+                const searchTerm = searchInput.value.trim();
                 const activeFilter = document.querySelector('.btn-filter.active');
                 const filterValue = activeFilter ? activeFilter.getAttribute('data-filter') : 'all';
                 
-                projectCards.forEach(card => {
-                    const projectContainer = card.closest('.col-md-6');
-                    const title = card.querySelector('.card-title').textContent.toLowerCase();
-                    const description = card.querySelector('.description-full') 
-                        ? card.querySelector('.description-full').textContent.toLowerCase() 
-                        : card.querySelector('.description-short').textContent.toLowerCase();
-                    const classSection = card.querySelector('.class-section-badge') 
-                        ? card.querySelector('.class-section-badge').textContent.toLowerCase() 
-                        : '';
-                    
-                    // Get all team members
-                    const teamMembers = Array.from(card.querySelectorAll('.team-badge'))
-                        .map(badge => badge.textContent.toLowerCase())
-                        .join(' ');
-                    
-                    // Check if matches search term
-                    const matchesSearch = searchTerm === '' || 
-                                        title.includes(searchTerm) || 
-                                        description.includes(searchTerm) || 
-                                        classSection.includes(searchTerm) || 
-                                        teamMembers.includes(searchTerm);
-                    
-                    // Check if matches filter
-                    const matchesFilter = filterValue === 'all' || classSection.includes(filterValue.toLowerCase());
-                    
-                    // Show or hide based on both conditions
-                    if (matchesSearch && matchesFilter) {
-                        projectContainer.style.display = '';
-                        resultsFound = true;
-                    } else {
-                        projectContainer.style.display = 'none';
-                    }
-                });
+                // Build the URL with search parameters
+                const searchUrl = `<?= base_url('home/search') ?>?term=${encodeURIComponent(searchTerm)}&filter=${encodeURIComponent(filterValue)}`;
                 
-                // Show "no results" message if needed
-                const noResultsMessage = document.getElementById('noSearchResults');
-                if (!resultsFound && (searchTerm !== '' || filterValue !== 'all')) {
-                    if (!noResultsMessage) {
-                        const message = document.createElement('div');
-                        message.id = 'noSearchResults';
-                        message.className = 'col-12 text-center py-4';
-                        message.innerHTML = '<p>No projects match your search criteria.</p>';
-                        document.getElementById('projectsContainer').appendChild(message);
-                    }
-                } else if (noResultsMessage) {
-                    noResultsMessage.remove();
-                }
+                // Fetch results from server
+                fetch(searchUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Update projects container with new results
+                        const projectsContainer = document.getElementById('projectsContainer');
+                        
+                        // Check if we have results
+                        if (data.projects && data.projects.length > 0) {
+                            // Build HTML for projects
+                            let projectsHTML = '';
+                            data.projects.forEach(project => {
+                                projectsHTML += `
+                                    <div class="col-md-6 col-lg-4 reveal active">
+                                        <div class="project-card">
+                                            <img src="${project.image_path}" class="card-img-top" alt="${project.title}">
+                                            <div class="card-body">
+                                                <h5 class="card-title">${project.title}</h5>
+                                                ${project.class_section ? `<div class="class-section-badge mb-2">
+                                                    <i class="bi bi-people-fill me-1"></i> ${project.class_section}
+                                                </div>` : ''}
+                                                <p class="card-text">
+                                                    <span class="description-short">${project.description.substring(0, 100)}${project.description.length > 100 ? '...' : ''}</span>
+                                                    <span class="description-full" style="display: none;">${project.description}</span>
+                                                    ${project.description.length > 100 ? '<a href="#" class="read-more-link">Read More</a>' : ''}
+                                                    <a href="#" class="read-less-link" style="display: none;">Show Less</a>
+                                                </p>
+                                                <a href="${project.url}" class="btn btn-primary btn-sm" target="_blank">
+                                                    <i class="bi bi-link-45deg me-1"></i> View Project
+                                                </a>
+                                                <div class="admin-buttons d-none">
+                                                    <button class="btn btn-outline-warning btn-sm me-1" onclick="openEditModal(${project.id})">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-danger btn-sm" onclick="confirmDelete(${project.id})">
+                                                        <i class="bi bi-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            });
+                            
+                            projectsContainer.innerHTML = projectsHTML;
+                            
+                            // Hide pagination during search
+                            const paginationContainer = document.querySelector('.pagination-container');
+                            if (paginationContainer) {
+                                paginationContainer.style.display = 'none';
+                            }
+                            
+                            // Re-initialize read more functionality
+                            initReadMore();
+                        } else {
+                            // No results found
+                            projectsContainer.innerHTML = `
+                                <div class="col-12 text-center py-4">
+                                    <p>No projects match your search criteria.</p>
+                                </div>
+                            `;
+                            
+                            // Hide pagination
+                            const paginationContainer = document.querySelector('.pagination-container');
+                            if (paginationContainer) {
+                                paginationContainer.style.display = 'none';
+                            }
+                        }
+                        
+                        // Hide loading spinner
+                        document.getElementById('loadingSpinner').classList.remove('show');
+                    })
+                    .catch(error => {
+                        console.error('Search error:', error);
+                        // Hide loading spinner
+                        document.getElementById('loadingSpinner').classList.remove('show');
+                        showToast('Error', 'An error occurred while searching projects', 'error');
+                    });
+            }
+            
+            // Add event listener for search input
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(performSearch, 500); // 500ms debounce
+            });
+            
+            // Update filter buttons to use AJAX search
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Perform search with current filter
+                    performSearch();
+                });
             });
         }
         

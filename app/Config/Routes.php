@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('landing', 'Home::landing');
+$routes->get('home/search', 'Home::search');
 
 // Admin routes
 $routes->post('admin/verify', 'Admin::verify');
