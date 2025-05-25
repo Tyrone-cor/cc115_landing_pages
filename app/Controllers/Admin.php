@@ -10,7 +10,7 @@ class Admin extends BaseController
     use ResponseTrait;
     
     protected $projectModel;
-    protected $adminCode = 'admin123'; // Simple admin code for demo purposes
+    protected $adminCode = 'admin@cc1115'; 
     
     public function __construct()
     {
